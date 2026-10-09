@@ -1,0 +1,54 @@
+$primary-color: #2563eb;
+$background-color: #f1f5f9;
+$card-color: white;
+$text-color: #333;
+$spacing: 20px;
+
+.app-container {
+  font-family: Arial, sans-serif;
+  background: $background-color;
+  min-height: 100vh;
+  padding: $spacing;
+  text-align: center;
+
+  h1 {
+    color: $primary-color;
+  }
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(250px, 1fr)
+  );
+  gap: $spacing;
+  max-width: 900px;
+  margin: auto;
+}
+
+.product-card {
+  background: $card-color;
+  padding: $spacing;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s;
+
+  h2 {
+    color: $primary-color;
+  }
+
+  p {
+    color: $text-color;
+  }
+
+  &:hover {
+    transform: translateY(-8px);
+  }
+}
+
+@media (max-width: 600px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+}
